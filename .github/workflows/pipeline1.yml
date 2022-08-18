@@ -48,6 +48,7 @@ jobs:
   #     #    path: app/build/libs/app-0.1-all.jar
   Docker-image:
     runs-on: [self-hosted, label-1]
+    needs: Clone-down
     steps:
       - name: Download code
         uses: actions/download-artifact@v2
