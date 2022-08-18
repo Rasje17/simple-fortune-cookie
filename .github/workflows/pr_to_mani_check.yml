@@ -1,5 +1,5 @@
-name: Fortune Cookie - pull to main
-on:
-  pull_request:
-    types: [opened, reopened]
-jobs:
+#name: Fortune Cookie - pull to main
+#on:
+#  pull_request:
+#    types: [opened, reopened]
+#jobs:
