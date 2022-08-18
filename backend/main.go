@@ -177,6 +177,6 @@ func main() {
 	mux.Handle("/fortunes", fortuneH)
 	mux.Handle("/fortunes/", fortuneH)
 
-	http.ListenAndServe(":1000", mux)
+	http.ListenAndServe(":9000", mux)
 
 }
