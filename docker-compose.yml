@@ -5,9 +5,7 @@ services:
     ports:
      - "6379:6379"
   backend:
-    image: fortune-backend:latest
-    build:
-      context: ./backend/
+    image: rasje17/fortune-backend:latest
     ports:
       - "9000:9000"
     links:
@@ -17,8 +15,7 @@ services:
     depends_on:
       - db
   frontend:
-    build:
-      context: ./frontend/
+    image: rasje17/fortune-frontend:latest
     ports:
       - "8080:8080"
     links:
@@ -26,3 +23,5 @@ services:
     environment:
       - BACKEND_DNS=backend
       - BACKEND_PORT=9000
+    command: "/frontend"
+    

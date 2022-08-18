@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . ./
 #COPY go.sum ./
-RUN go mod download
+RUN go mod download && apk add build-base
 
 COPY *.go ./
 

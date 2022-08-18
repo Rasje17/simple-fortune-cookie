@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - "develop"
-      - "feature/**"
 env:
   docker_username: ${{ secrets.DOCKER_USER }}
   docker_password: ${{ secrets.DOCKER_PW }}
@@ -12,7 +11,6 @@ jobs:
   Clone-down:
     name: Clone down repo
     runs-on: [self-hosted, label-1]
-    #container: gradle:6-jdk11
     steps:
     - uses: actions/checkout@v2
     - name: Upload Repo
