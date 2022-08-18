@@ -33,6 +33,7 @@ func HealthzHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+    fmt.Println("frontend started with dns: %s", BACKEND_DNS)
 
     http.HandleFunc("/healthz", HealthzHandler)
 
