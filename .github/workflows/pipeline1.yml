@@ -29,7 +29,7 @@ jobs:
           name: code
           path: .
       - name: Build backend
-        run: go build /backend/
+        run: source ~/.profile && go build /backend/
       #- name: Test
       #  run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh
       - name: Upload Repo
