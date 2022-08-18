@@ -1,4 +1,4 @@
-# Simple Fortune Cookie
+# Simple Fortune Cookie Test
 
 A project in Go for you to apply all the awesome things
     you've learned at the academy!
