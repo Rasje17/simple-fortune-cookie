@@ -4,8 +4,25 @@ on:
     branches:
       - "main"
 jobs:
-  Hello-world:
+  Checkout-code:
     runs-on: [self-hosted, production]
     steps: 
-      - name: Hello World
-        run: echo "Hello World"
+    - uses: actions/checkout@v2
+    - name: Upload Repo
+      uses: actions/upload-artifact@v2
+      with:
+        name: code
+        path: |
+          .
+          !.git
+  Deploy-k8s:
+    runs-on: [self-hosted, production]
+    needs: Checkout-code
+    steps:
+      - name: Download code
+        uses: actions/download-artifact@v2
+        with:
+          name: code
+          path: .
+      - name: Deploy k8s
+        run: chmod +x ci/deploy-app.sh && ci/deploy-app.sh
