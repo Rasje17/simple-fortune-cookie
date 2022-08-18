@@ -44,3 +44,9 @@ jobs:
           path: .
       - name: Execute component test
         run: chmod +x ci/component-test.sh && ci/component-test.sh
+  Docker-hub:
+    runs-on: [self-hosted, label-1]
+    needs: Test
+    steps:
+      - name: Push to Docker Hub
+        run: chmod +x ci/push-docker.sh && ci/push-docker.sh 
