@@ -1,0 +1,11 @@
+name: Fortune Cookie - PR to main
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  Hello-world:
+    runs-on: [self-hosted, production]
+    steps: 
+      - name: Hello World
+        run: echo "Hello World"
