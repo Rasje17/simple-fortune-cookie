@@ -35,7 +35,7 @@ jobs:
         run: chmod +x ci/build-docker-backend.sh && ci/build-docker-backend.sh
       - name: build frontend
         run: chmod +x ci/build-docker-frontend.sh && ci/build-docker-frontend.sh 
-  Test:
+  #Test:
   #  runs-on: [self-hosted, label-1]
   #  needs: Docker-image
   #  steps:
