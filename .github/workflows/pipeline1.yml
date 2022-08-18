@@ -22,30 +22,30 @@ jobs:
         path: |
           .
           !.git
-  Build:
-    runs-on: [self-hosted, label-1]
-    needs: Clone-down
-    #container: gradle:6-jdk11
-    steps:
-      - name: Download code
-        uses: actions/download-artifact@v2
-        with:
-          name: code
-          path: .
-      - name: Build backend
-        run: source ~/.profile && go build ./backend/
-      #- name: Test
-      #  run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh
-      - name: Upload Repo
-        uses: actions/upload-artifact@v2
-        with: 
-          name: code
-          path: .
-      #- name: Upload_binary
-      #  uses: actions/upload-artifact@v2
-      #  with:
-      #    name: build
-      #    path: app/build/libs/app-0.1-all.jar
+  # Build:
+  #   runs-on: [self-hosted, label-1]
+  #   needs: Clone-down
+  #   #container: gradle:6-jdk11
+  #   steps:
+  #     - name: Download code
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: code
+  #         path: .
+  #     # - name: Build backend
+  #     #   run: source ~/.profile && go build ./backend/
+  #     #- name: Test
+  #     #  run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh
+  #     # - name: Upload Repo
+  #     #   uses: actions/upload-artifact@v2
+  #     #   with: 
+  #     #     name: code
+  #     #     path: .
+  #     #- name: Upload_binary
+  #     #  uses: actions/upload-artifact@v2
+  #     #  with:
+  #     #    name: build
+  #     #    path: app/build/libs/app-0.1-all.jar
   Docker-image:
     runs-on: [self-hosted, label-1]
     needs: Build
