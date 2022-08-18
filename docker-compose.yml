@@ -7,7 +7,7 @@ services:
   backend:
     image: rasje17/fortune-backend:latest
     ports:
-      - "9000:9000"
+      - "9001:9000"
     links:
       - db
     environment:
