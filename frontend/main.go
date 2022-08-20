@@ -30,7 +30,7 @@ var myClient = &http.Client{Timeout: 10 * time.Second}
 func HealthzHandler(w http.ResponseWriter, r *http.Request) {
     if supposedToFail {
         w.WriteHeader(http.StatusInternalServerError)
-        io.WriteString(w, "unhealthy")
+        io.WriteString(w, "UNHEALTHY")
     } else {
     w.WriteHeader(http.StatusOK)
     io.WriteString(w, "healthy")
