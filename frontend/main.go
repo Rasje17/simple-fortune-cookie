@@ -28,11 +28,10 @@ type newFortune struct {
 var myClient = &http.Client{Timeout: 10 * time.Second}
 
 func HealthzHandler(w http.ResponseWriter, r *http.Request) {
-    if (supposedToFail) {
+    if supposedToFail {
         w.WriteHeader(http.StatusInternalServerError)
         io.WriteString(w, "unhealthy")
-    }
-    else {
+    } else {
     w.WriteHeader(http.StatusOK)
     io.WriteString(w, "healthy")
     }
