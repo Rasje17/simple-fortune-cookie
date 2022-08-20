@@ -11,7 +11,7 @@ import (
     "bytes"
     "math/rand"
 )
-
+var supposedToFail = true
 var BACKEND_DNS=getEnv("BACKEND_DNS", "localhost")
 var BACKEND_PORT=getEnv("BACKEND_PORT", "9000")
 
@@ -28,8 +28,14 @@ type newFortune struct {
 var myClient = &http.Client{Timeout: 10 * time.Second}
 
 func HealthzHandler(w http.ResponseWriter, r *http.Request) {
+    if (supposedToFail) {
+        w.WriteHeader(http.StatusInternalServerError)
+        io.WriteString(w, "unhealthy")
+    }
+    else {
     w.WriteHeader(http.StatusOK)
     io.WriteString(w, "healthy")
+    }
 }
 
 func main() {
