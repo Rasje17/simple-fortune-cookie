@@ -11,7 +11,7 @@ import (
     "bytes"
     "math/rand"
 )
-var supposedToFail = true
+var supposedToFail = false
 var BACKEND_DNS=getEnv("BACKEND_DNS", "localhost")
 var BACKEND_PORT=getEnv("BACKEND_PORT", "9000")
 
